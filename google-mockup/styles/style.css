@@ -1,0 +1,36 @@
+.centered {
+    margin: auto;
+}
+
+.text-centered {
+    text-align: center;
+}
+
+img.centered {
+    display: block;
+}
+
+.main-image {
+    margin-top: 100px;
+    margin-bottom: 30px;
+}
+
+form {
+    display: inline-block;
+}
+
+button {
+    width: 150px;
+    height: 30px;
+    background-color: #f4f4f4; 
+    border: none;
+    font-weight: bold;
+    color: #7d8286;
+    margin: 20px 0;
+    font-size: .8em;
+}
+
+input {
+    width: 100%;
+    height: 30px;
+}
