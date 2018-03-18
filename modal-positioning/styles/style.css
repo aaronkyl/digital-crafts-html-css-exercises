@@ -13,13 +13,16 @@ code {
 }
 
 .modal-dialog {
-    border: 5px solid black;
+    border: 10px solid #808080;
+    border-radius: 5px;
     width: 20%;
     position: fixed;
     background-color: white;
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
+    box-shadow: 0 0 15px black;
+    z-index: 2;
 }
 
 .modal-header {
@@ -36,4 +39,15 @@ code {
 .modal-buttons {
     text-align: right;
     padding: 0 10px 10px;
+}
+
+#grey-out {
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    opacity: .5;
+    z-index: 1;
+    position: fixed;
+    left: 0;
+    top: 0;
 }
