@@ -1,0 +1,39 @@
+body {
+    width: 50%;
+    margin: auto;
+}
+
+code {
+    display: block;
+    padding-left: 20px;
+}
+
+.indented {
+    margin: auto 100px;
+}
+
+.modal-dialog {
+    border: 5px solid black;
+    width: 20%;
+    position: fixed;
+    background-color: white;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.modal-header {
+    background-color: #808080;
+    color: white;
+    font-size: 1.75em;
+    padding: 5px 10px;
+}
+
+.modal-content {
+    padding: 10px 10px 0 10px;
+}
+
+.modal-buttons {
+    text-align: right;
+    padding: 0 10px 10px;
+}
