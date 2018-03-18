@@ -1,0 +1,94 @@
+/** {*/
+/*    border: 1px solid blue;*/
+/*}*/
+
+h1, h2, h3 {
+    font-family: arial, sans-serif;
+    color: #333;
+}
+
+p {
+    line-height: 1.5em;
+    color: #4a4a4a;
+}
+
+a {
+    color: #4a4a4a;
+}
+
+figure{
+    margin-bottom: 3em;
+}
+
+figure > img {
+    display: block;
+    margin: 0 auto;
+    width: 100%;
+    max-width: 700px;
+}
+
+figcaption {
+    color: #9a9a9a;
+    font-size: .6em;
+    font-family: arial, sans-serif;
+    text-align: center;
+}
+
+header {
+    width: 80%;
+    margin: 0 auto;
+}
+
+header > ul {
+    list-style-type: none;
+    text-align: right;
+}
+
+header li {
+    display: inline-block;
+    color: #9a9a9a;
+    font-size: .9em;
+    font-family: arial, sans-serif;
+    padding: 0 1em;
+}
+
+#author-image {
+    border-radius: 50%;
+    width: 55px;
+    float: left;
+}
+.content {
+    padding-top: 50px;
+    width: 50%;
+    margin: 0 auto;
+    font-size: 1.3em;
+}
+
+#author-info{
+    padding-left: 65px;
+}
+
+#author-info > h4 {
+    margin: 0;
+    color: #9a9a9a;
+    font-size: .6em;
+    font-family: arial, sans-serif;
+    font-weight: lighter;
+    margin-bottom: .5em;
+}
+
+/* This is not working... */
+#author-name {
+    font-weight: bold !important;
+    font-size: .7em;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+.ellipses {
+    text-align: center;
+    font-size: 1.5em;
+    color: #9a9a9a;
+}
