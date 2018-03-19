@@ -1,0 +1,54 @@
+body, html {
+    margin: 0;
+    height: 100%;
+    font-family: arial, sans-serif;
+}
+
+header {
+    top: 0;
+    position: fixed;
+    height: 50px;
+    width: 100%;
+    background-color: grey;
+    color: white;
+    font-weight: bolder;
+    text-align: center;
+    font-size: 2em;
+}
+
+footer {
+    bottom: 0;
+    position: absolute;
+    height: 50px;
+    width: 100%;
+    background-color: purple;
+    color: white;
+    font-weight: bolder;
+    text-align: center;
+    font-size: 2em;
+}
+
+.main-content {
+    height: 100%;
+    background-color: lightblue;
+    margin-top: 50px;
+}
+
+.left-column {
+    float: left;
+    width: 300px;
+    background-color: pink;
+    margin: 10px;
+}
+
+.right-column {
+    width: calc(100% - 330px);
+    min-width: 300px;
+    background-color: gold;
+    margin: 10px 10px 10px 0;
+    float: left;
+}
+
+.clear {
+    clear: both;
+}
