@@ -2,6 +2,8 @@ body, html {
     margin: 0;
     height: 100%;
     font-family: arial, sans-serif;
+    background-color: yellow;
+    overflow: hidden;
 }
 
 header {
@@ -29,7 +31,7 @@ footer {
 }
 
 .main-content {
-    height: 100%;
+    height: calc(100% - 100px);
     background-color: lightblue;
     margin-top: 50px;
 }
@@ -39,6 +41,7 @@ footer {
     width: 300px;
     background-color: pink;
     margin: 10px;
+    height: calc(100% - 20px)
 }
 
 .right-column {
@@ -47,6 +50,7 @@ footer {
     background-color: gold;
     margin: 10px 10px 10px 0;
     float: left;
+    height: calc(100% - 20px);
 }
 
 .clear {
