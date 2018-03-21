@@ -1,0 +1,36 @@
+/** {*/
+/*    border: 1px solid red !important;*/
+/*}*/
+
+.bootstrap-override .navbar-nav li:not(:last-child) {
+    border-right: 1px solid lightgrey;
+}
+
+.bootstrap-override .navbar-nav li {
+    padding-left: 2em;
+    padding-right: 2em;
+}
+
+.image-caption {
+    color: darkgrey;
+    text-align: center;
+}
+
+.employee-img {
+    border-radius: 50%;
+    display: block;
+    margin: auto;
+}
+
+.centered-text {
+    text-align: center;
+}
+
+.footer {
+    text-align: center;
+}
+
+.awesomeness {
+    max-width: 75%;
+    margin: auto;
+}
