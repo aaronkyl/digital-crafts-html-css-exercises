@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+{% block main %}
+    {% if celsius %}
+    <h3>{{ celsius }} degrees Celsius is {{ fahrenheit }} degrees Fahrenheit</h3>
+    {% endif %}
+    <form action="/c-to-f" method="get">
+        Enter degrees in Celsius, then hit Calculate.<br>
+        <input name="celsius" type="number" step="0.01" placeholder="Degrees Celsius">
+        <button type="submit">Calculate</button>
+    </form>
+    <a href="/">Back</a>
+{% endblock %}
