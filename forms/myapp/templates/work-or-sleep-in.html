@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block main %}
+    {% if day is defined %}
+        <h3>On {{ day }} you {{ result }}!</h3>
+    {% endif %}
+    <form action="/work-or-sleep-in" method="get">
+        Please select a day of the week.<br>
+        <select name="day">
+            <option value="0">Sunday</option>
+            <option value="1">Monday</option>
+            <option value="2">Tuesday</option>
+            <option value="3">Wednesday</option>
+            <option value="4">Thursday</option>
+            <option value="5">Friday</option>
+            <option value="6">Saturday</option>
+        </select>
+        <button type="submit">Submit</button>
+    </form>
+{% endblock %}

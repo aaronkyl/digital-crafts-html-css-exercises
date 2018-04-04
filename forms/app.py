@@ -26,10 +26,26 @@ class CtoFHandler(TemplateHandler):
         else:
             self.render_template("c-to-f.html", {})
 
+class WorkOrSleepInHandler(TemplateHandler):
+    def get(self):
+        days_of_week = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
+        day = self.get_query_argument("day", None)
+        if day:
+            day = int(day)
+            if day > 0 and day < 6:
+                result = "work"
+            else:
+                result = "sleep in"
+            day = days_of_week[day]
+            self.render_template("work-or-sleep-in.html", {"day": day, "result": result})
+        else:
+            self.render_template("work-or-sleep-in.html", {})
+
 def make_app():
     return tornado.web.Application([
         (r"/", MainHandler),
         (r"/c-to-f", CtoFHandler),
+        (r"/work-or-sleep-in", WorkOrSleepInHandler),
         (
             r"/static/(.*)",
             tornado.web.StaticFileHandler,
