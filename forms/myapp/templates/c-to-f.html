@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 
 {% block main %}
-    {% if celsius %}
+    {% if celsius is defined %}
     <h3>{{ celsius }} degrees Celsius is {{ fahrenheit }} degrees Fahrenheit</h3>
     {% endif %}
     <form action="/c-to-f" method="get">

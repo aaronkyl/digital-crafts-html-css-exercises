@@ -7,7 +7,9 @@ from jinja2 import Environment, PackageLoader, select_autoescape
 ENV = Environment(
     loader=PackageLoader('myapp', 'templates'),
     autoescape=select_autoescape(['html', 'xml']))
-    
+
+coins = 0
+
 class TemplateHandler(tornado.web.RequestHandler):
     def render_template (self, tpl, context):
         template = ENV.get_template(tpl)
@@ -41,11 +43,44 @@ class WorkOrSleepInHandler(TemplateHandler):
         else:
             self.render_template("work-or-sleep-in.html", {})
 
+class TipCalculatorHandler(TemplateHandler):
+    def get(self):
+        self.render_template("tip-calculator.html", {})
+    def post(self):
+        total = float(self.get_argument("total"))
+        service_level = self.get_argument("service_level")
+        split = int(self.get_argument("split"))
+        
+        if service_level == "good":
+            total *= 1.2
+        elif service_level == "fair":
+            total *= 1.15
+        elif service_level == "bad":
+            total *= 1.1
+        
+        if split:
+            split_no = self.get_body_argument("split_no")
+            if split_no:
+                total /= split_no
+        
+        total = "{:.2f}".format(total)
+            
+        self.render_template("tip-calculator.html", {"total": total, "split": split})
+
+class CoinsHandler(TemplateHandler):
+    def get(self):
+        self.render_template("how-many-coins.html", {"coins": coins})
+    def post(self):
+        coins += 1
+        self.render_template("how_many_coins.html", {"coins": coins})
+
 def make_app():
     return tornado.web.Application([
         (r"/", MainHandler),
         (r"/c-to-f", CtoFHandler),
         (r"/work-or-sleep-in", WorkOrSleepInHandler),
+        (r"/tip-calculator", TipCalculatorHandler),
+        (r"/how-many-coins", CoinsHandler),
         (
             r"/static/(.*)",
             tornado.web.StaticFileHandler,

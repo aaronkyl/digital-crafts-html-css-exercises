@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block main %}
+    <form action="/tip-calculator" method="post">
+        Please enter your total before tip: $
+        <input name="total" type="number" step="0.01" required><br>
+        Please select the level of service you received.<br>
+        <select name="service_level">
+            <option value="good">Good</option>
+            <option value="fair">Fair</option>
+            <option value="bad">Bad</option>
+        </select><br>
+        Are you splitting this bill?
+        <input type="radio" name="split" id="split0" value="0" required>
+        <label for="split1">No</label>
+        <input type="radio" name="split" id="split1" value="1" required>
+        <label for="split1">Yes</label><br>
+        If splitting the bill, how many ways should it be split?<br>
+        <input name="split_no" type="number">
+        <button type="submit">Calculate Total</button>
+    </form>
+    {% if total is defined %}
+        <h3>The total with tip {% if split %}per person{% endif %} is ${{ total }}</h3>
+    {% endif %}
+    <a href="/">Back</a>
+{% endblock %}
