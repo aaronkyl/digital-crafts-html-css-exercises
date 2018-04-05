@@ -8,8 +8,6 @@ ENV = Environment(
     loader=PackageLoader('myapp', 'templates'),
     autoescape=select_autoescape(['html', 'xml']))
 
-coins = 0
-
 class TemplateHandler(tornado.web.RequestHandler):
     def render_template (self, tpl, context):
         template = ENV.get_template(tpl)
@@ -46,6 +44,7 @@ class WorkOrSleepInHandler(TemplateHandler):
 class TipCalculatorHandler(TemplateHandler):
     def get(self):
         self.render_template("tip-calculator.html", {})
+        
     def post(self):
         total = float(self.get_argument("total"))
         service_level = self.get_argument("service_level")
@@ -68,11 +67,15 @@ class TipCalculatorHandler(TemplateHandler):
         self.render_template("tip-calculator.html", {"total": total, "split": split})
 
 class CoinsHandler(TemplateHandler):
+    
     def get(self):
+        coins = 0
         self.render_template("how-many-coins.html", {"coins": coins})
+        
     def post(self):
+        coins = int(self.get_argument("coins"))
         coins += 1
-        self.render_template("how_many_coins.html", {"coins": coins})
+        self.render_template("how-many-coins.html", {"coins": coins})
 
 def make_app():
     return tornado.web.Application([

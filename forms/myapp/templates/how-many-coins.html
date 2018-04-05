@@ -1,5 +1,11 @@
 {% extends "base.html" %}
 
 {% block main %}
-    
+    You currently have <b>{{ coins }}</b> coins. Would you like another?
+    <form action="/how-many-coins" method="post">
+        <input hidden name="coins" value="{{ coins }}">
+        <button type="submit">Yes please!</button>
+        <button type="button">No thanks.</button>
+    </form>
+    <a href="/">Back</a>
 {% endblock %}
